@@ -122,6 +122,12 @@ docs/
 └── experiments.md                # Benchmark results and analysis
 ```
 
+## Status
+
+This project is a work in progress. Training was not completed due to GPU credit constraints — no fully trained checkpoint is available. The architecture, spec, CPU kernel, and training infrastructure are functional, but published benchmark numbers in [docs/experiments.md](docs/experiments.md) reflect partially trained models.
+
+If you're interested in sponsoring GPU compute to finish training, reach out at gabewillen@gmail.com — I'd happily continue.
+
 ## Specification
 
 The full normative specification is in [docs/spec.md](docs/spec.md). It defines the model configuration, parameter tensors, fixed-point arithmetic, deterministic reference algorithms, single-core and multi-core execution models, stability constraints, and initialization strategies.
