@@ -1,0 +1,20 @@
+[project]
+name = "monoid"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=4.4.2",
+    "filelock>=3.20.3",
+    "huggingface-hub>=0.34.0,<1.0",
+    "ninja>=1.13.0",
+    "numpy>=2.2.6",
+    "torch>=2.9.1",
+    "tqdm>=4.67.1",
+    "wandb>=0.23.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"
