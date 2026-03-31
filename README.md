@@ -24,18 +24,18 @@ where `a[c]` and `b[c]` are code-conditioned vectors. Because affine transforms 
 
 ## Model Presets
 
-| Preset | Layers | State Dim | Microblock | Approx. Params | 1T Avg (ms) | 1T KB/s | Best MT | Best MT Avg (ms) | Best MT KB/s |
-|--------|--------|-----------|------------|----------------|-------------|---------|---------|------------------|--------------|
-| `small` | 1 | 512 | 256 | ~0.5M | 0.22 | 18236.10 | 8T | 0.27 | 14601.58 |
-| `small_l2` | 2 | 512 | 256 | ~1M | 0.47 | 8542.37 | 8T | 0.57 | 6964.39 |
-| `small_l5` | 5 | 512 | 256 | ~2.5M | 1.06 | 3771.01 | 8T | 1.35 | 2963.13 |
-| `medium` | 1 | 2048 | 64 | ~4M | 1.21 | 3311.07 | 8T | 1.43 | 2793.41 |
-| `medium_deep` | 8 | 512 | 128 | ~4M | 1.84 | 2172.09 | 8T | 2.96 | 1353.33 |
-| `base` | 15 | 2048 | 128 | ~30M | 16.75 | 238.84 | 8T | 18.10 | 221.03 |
-| `large` | 27 | 2048 | 128 | ~55M | 29.83 | 134.08 | 8T | 32.58 | 122.76 |
-| `xlarge` | 216 | 2048 | 128 | ~440M | 237.84 | 16.82 | 8T | 264.11 | 15.15 |
+| Preset | Layers | State Dim | Microblock | Approx. Params | 1T CPU (B=1, ms) |
+|--------|--------|-----------|------------|----------------|------------------|
+| `small` | 1 | 512 | 256 | ~0.5M | 0.17 |
+| `small_l2` | 2 | 512 | 256 | ~1M | 0.33 |
+| `small_l5` | 5 | 512 | 256 | ~2.5M | 0.92 |
+| `medium` | 1 | 2048 | 64 | ~4M | 0.96 |
+| `medium_deep` | 8 | 512 | 128 | ~4M | 1.59 |
+| `base` | 15 | 2048 | 128 | ~30M | 11.58 |
+| `large` | 27 | 2048 | 128 | ~55M | 21.21 |
+| `xlarge` | 216 | 2048 | 128 | ~440M | 172.73 |
 
-`1T` and `Best MT` use the all-preset float-kernel benchmark in [`docs/experiments.md`](docs/experiments.md). In the recorded multi-thread runs, `8T` is faster than `16T` and `32T` for every preset.
+`1T CPU` is single-document float-kernel latency (`B=1`) from [`.snapshots/embed_bench_20260114_031044.md`](.snapshots/embed_bench_20260114_031044.md).
 
 ## Installation
 
