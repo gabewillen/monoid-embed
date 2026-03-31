@@ -24,16 +24,18 @@ where `a[c]` and `b[c]` are code-conditioned vectors. Because affine transforms 
 
 ## Model Presets
 
-| Preset | Layers | State Dim | Microblock | Approx. Params |
-|--------|--------|-----------|------------|----------------|
-| `small` | 1 | 512 | 256 | ~0.5M |
-| `small_l2` | 2 | 512 | 256 | ~1M |
-| `small_l5` | 5 | 512 | 256 | ~2.5M |
-| `medium` | 1 | 2048 | 64 | ~4M |
-| `medium_deep` | 8 | 512 | 128 | ~4M |
-| `base` | 15 | 2048 | 128 | ~30M |
-| `large` | 27 | 2048 | 128 | ~55M |
-| `xlarge` | 216 | 2048 | 128 | ~440M |
+| Preset | Layers | State Dim | Microblock | Approx. Params | 1T Avg (ms) | 1T KB/s | 16T Avg (ms) | 16T KB/s |
+|--------|--------|-----------|------------|----------------|-------------|---------|--------------|----------|
+| `small` | 1 | 512 | 256 | ~0.5M | 0.17 | 22866.91 | 0.26 | 15278.57 |
+| `small_l2` | 2 | 512 | 256 | ~1M | 0.33 | 11982.74 | 0.51 | 7900.21 |
+| `small_l5` | 5 | 512 | 256 | ~2.5M | 0.92 | 4340.80 | 1.26 | 3166.43 |
+| `medium` | 1 | 2048 | 64 | ~4M | 0.96 | 4178.49 | 1.25 | 3212.45 |
+| `medium_deep` | 8 | 512 | 128 | ~4M | 1.59 | 2521.25 | 2.75 | 1454.85 |
+| `base` | 15 | 2048 | 128 | ~30M | 11.58 | 345.57 | 13.62 | 293.68 |
+| `large` | 27 | 2048 | 128 | ~55M | 21.21 | 188.59 | 24.96 | 160.28 |
+| `xlarge` | 216 | 2048 | 128 | ~440M | 172.73 | 23.16 | 202.96 | 19.71 |
+
+`1T` and `16T` are float-kernel benchmarks on a 4096-byte `docs/embed.md` input from [`.snapshots/embed_bench_20260114_031044.md`](.snapshots/embed_bench_20260114_031044.md) and [`.snapshots/embed_bench_20260114_031929.md`](.snapshots/embed_bench_20260114_031929.md).
 
 ## Installation
 
